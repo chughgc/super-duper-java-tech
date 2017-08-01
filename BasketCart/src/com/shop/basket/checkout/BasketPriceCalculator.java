@@ -29,6 +29,10 @@ public class BasketPriceCalculator {
         		                .reduce(BigDecimal.ZERO,BigDecimal::add);
     }
     
+    /**
+     * Main method which will add few items in the list and print out the price
+     * @param args
+     */
     public static void main(String[] args) {
 		Basket basket = new Basket();
 		BasketPriceCalculator calc = new BasketPriceCalculator();
@@ -36,7 +40,7 @@ public class BasketPriceCalculator {
 				                     new ItemImpl(EligibleItem.BANANA, 12.5), 
 				                     new ItemImpl(EligibleItem.BANANA, 12.5),
 				                     new ItemImpl(EligibleItem.PEACHE, 10.50));
-		System.out.println(calc.getTotalPrice(basket));
+		System.out.println("Total Price:" + calc.getTotalPrice(basket));
 	}
     
     private void addItemToBasket(Basket basket, Item ...items) {
